@@ -12,8 +12,8 @@ df = pd.DataFrame(data)
 st.title("Sales Dashboard")
 st.subheader("This dashboard is about sales")
 
-category = st.selectbox("Choose the category",df["Category"].unique())
-category = st.sidebar.selectbox("Choose the category",df["Category"].unique())
+# category = st.selectbox("Choose the category",df["Category"].unique()) # This select box occurs in the middle of the dashboard
+category = st.sidebar.selectbox("Choose the category",df["Category"].unique()) # Moved the select box to the sidebar
 filtered = df[df["Category"] == category]
 
 st.dataframe(filtered)
